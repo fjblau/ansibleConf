@@ -1,0 +1,10 @@
+---
+- hosts: [app]
+  tasks:
+    - name: Copy the code from repository
+      git: repo=https://github.com/fjblau/pitemp.git dest=/home/ubuntu/pitemp
+- hosts: [ubuntu]
+  tasks:
+  - name: Get latest index file
+    git: repo=https://github.com/fjblau/webtest.git dest=/var/www/html/webtest
+ 
